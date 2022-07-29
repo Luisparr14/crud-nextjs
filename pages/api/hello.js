@@ -1,5 +1,9 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { Funcionario } from "../../entities"
 
 export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
+  const funcionarios = Funcionario.findAll()
+  res.status(200).json({
+    status: "success",
+    data: funcionarios
+  })
 }
