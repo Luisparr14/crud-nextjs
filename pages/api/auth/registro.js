@@ -4,7 +4,6 @@ export default async function Registro(req, res) {
   if (req.method === "POST") {
     try {
       const { id, nombre, apellido, correo, contrasena, contrasena2 } = req.body;
-      console.log(req.body)
       if(contrasena !== contrasena2) {
         res.status(400).json({
           ok: false,
