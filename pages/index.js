@@ -292,7 +292,7 @@ export async function getStaticProps() {
   let actas = []
   let areas = []
   try {
-    const response = await axios.get(`${process.env.API_URL}/actas`)
+    const response = await axios.get(`${process.env.API_URL}/api/actas`)
     const { data } = response    
     if (data.ok) {
       actas = data.data
@@ -304,7 +304,7 @@ export async function getStaticProps() {
 
 
   try {
-    const response2 = await axios.get(`${process.env.API_URL}/areas`)
+    const response2 = await axios.get(`${process.env.API_URL}/api/areas`)
     const { data: data2 } = response2    
     if (data2.ok) {
       areas = data2.data
