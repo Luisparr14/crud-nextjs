@@ -3,8 +3,7 @@ import { Acta, Funcionario } from "../../../entities";
 export default async function Agregar(req, res) {
   if (req.method === "POST") {
     try {
-      const { area, tema, descripcion, responsabilidades, funcionario } = req.body;            
-      
+      const { area, tema, descripcion, responsabilidades, funcionario } = req.body;                  
       if (area && tema && descripcion && responsabilidades && funcionario) {
         const acta = {
           idarea: area,
@@ -14,7 +13,7 @@ export default async function Agregar(req, res) {
           idfuncionario: funcionario
         }
 
-        const actaBD = Acta.create(acta);
+        const actaBD = await Acta.create(acta);
 
         if(!actaBD) {
           res.status(400).json({

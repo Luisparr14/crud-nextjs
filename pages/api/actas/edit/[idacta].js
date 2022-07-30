@@ -5,7 +5,7 @@ export default async function Editar(req, res) {
     try {
       const { idarea, tema, descripcion, responsabilidades } = req.body;
       const { idacta } = req.query;
-
+      
       if (idarea && tema && descripcion && responsabilidades) {
         const acta = {
           idarea,
