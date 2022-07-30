@@ -288,7 +288,8 @@ export default function Home({ actas, areas }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
+  
   let actas = []
   let areas = []
   try {
