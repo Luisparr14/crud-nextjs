@@ -121,6 +121,7 @@ export default function Home({ actas, areas }) {
           confirmButtonText: 'Ok'
         }).then(() => {
           router.push('/')
+          setInfoActa(initialState)
         })
       }
     } catch (error) {
@@ -302,7 +303,6 @@ export async function getServerSideProps(context) {
     const { response } = error
     console.log(response.data)
   }
-
 
   try {
     const response2 = await axios.get(`${process.env.API_URL}/api/areas`)
